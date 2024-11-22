@@ -1,0 +1,39 @@
+# Redirigir HTTP a HTTPS
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Configuración de CORS
+<IfModule mod_headers.c>
+   Header set Access-Control-Allow-Origin "http://localhost:5173"
+   Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+   Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+   Header set Access-Control-Allow-Credentials "true"
+</IfModule>
+
+# Aceptar todas las solicitudes OPTIONS (para el preflight de CORS)
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ $1 [R=200,L]
+
+# Bloquear caracteres sospechosos en la URL
+RewriteCond %{QUERY_STRING} (\<|>|\'|\"|%3C|%3E|%27|%22) [NC]
+RewriteRule ^ - [F]
+
+# Desactivar la exploración de directorios
+Options -Indexes
+
+<IfModule mod_headers.c>
+    # Protección contra XSS
+    Header set X-XSS-Protection "1; mode=block"
+    # Protección contra la inyección de contenido
+    Header set X-Content-Type-Options "nosniff"
+    # Protección contra ataques de clickjacking
+    Header always append X-Frame-Options "SAMEORIGIN"
+    # Política de seguridad de contenido
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self';"
+</IfModule>
+
+# Bloquear el acceso a archivos específicos
+<FilesMatch "(^\.|config\.php|composer\.json|composer\.lock)">
+    Require all denied
+</FilesMatch>

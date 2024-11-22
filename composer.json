@@ -1,0 +1,21 @@
+{
+    "name": "tauro/gestion_incidencias_mp",
+    "description": "Sistema de gestión de incidencias para la Municipalidad Provincial de Pomabamba",
+    "type": "project",
+    "require": {
+        "firebase/php-jwt": "^6.10",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "Tauro\\GestionIncidenciasMp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Roberth Rios",
+            "email": "tauroroberth00@gmail.com"
+        }
+    ]
+}
