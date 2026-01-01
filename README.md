@@ -5,8 +5,7 @@
 ![JWT](https://img.shields.io/badge/JWT-Auth-black?style=for-the-badge&logo=json-webtokens)
 ![Architecture](https://img.shields.io/badge/Architecture-MVC-orange?style=for-the-badge)
 
-> **Desarrollado por:** Ing. Roberth Rios Jesus  
-> **Ingeniero de Sistemas Colegiado (CIP 321353)**
+> **Ing. Roberth Rios Jesus** - Ingeniero de Sistemas Colegiado (CIP 321353)
 
 Este repositorio aloja el código fuente del **Backend** para el sistema de gestión de la **Municipalidad Provincial de Pomabamba**. 
 
