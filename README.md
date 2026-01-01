@@ -70,7 +70,7 @@ graph TD
 
     subgraph "Capa de Datos"
         DB[(MySQL Database)]
-        Storage[filesystem (/uploads)]
+        Storage["filesystem (/uploads)"]
     end
 
     Client -- HTTPS Request (JSON) --> Htaccess
