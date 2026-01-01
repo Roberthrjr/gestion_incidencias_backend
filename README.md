@@ -106,16 +106,15 @@ composer install
 ```
 
 3. **Configuración de Variables de Entorno**
+Renombra el archivo `.env.example` a `.env` y configura tus credenciales:
 
-Renombra el archivo .env.example a .env y configura tus credenciales:
-
-Ini, TOML
-
+```ini
 DB_HOST=localhost
 DB_NAME=gestion_incidencias_mp
 DB_USER=root
 DB_PASS=tu_contraseña
 SECRET_KEY="tu_clave_super_secreta_para_jwt"
+```
 
 4. **Base de Datos**
 Importa el script SQL ubicado en database/dump.sql en tu servidor MySQL/MariaDB para crear las tablas y relaciones.
